@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: plantpal-backend
+    env: java
+    buildCommand: ./mvnw clean package -DskipTests
+    startCommand: java -jar target/*.jar
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:mysql://mysql.railway.internal:3306/railway
+      - key: SPRING_DATASOURCE_USERNAME
+        value: root
+      - key: SPRING_DATASOURCE_PASSWORD
+        value: qjFMxgdfDmVBCDcTtVeHeWmtKOCKdbDy
